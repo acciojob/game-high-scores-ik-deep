@@ -34,25 +34,27 @@ function showScores() {
                 scoresDiv.textContent = 'No scores yet';
             } else {
                 // Create a table to display the scores
-                var table = document.createElement('table');
+                // var table = document.createElement('table');
 
-                // Create the header row
-                var headerRow = table.insertRow(0);
-                var nameHeader = headerRow.insertCell(0);
-                var scoreHeader = headerRow.insertCell(1);
-                nameHeader.textContent = 'Name';
-                scoreHeader.textContent = 'Score';
-
+                // // Create the header row
+                // var headerRow = table.insertRow(0);
+                // var nameHeader = headerRow.insertCell(0);
+                // var scoreHeader = headerRow.insertCell(1);
+                // nameHeader.textContent = 'Name';
+                // scoreHeader.textContent = 'Score';
+              let table = '<table>';  
+               table += '<tr><th>Name</th><th>Score</th><th>Score</th></tr>';  
                 // Create a row for each score
                 for (var i = 0; i < scores.length; i++) {
-                    var row = table.insertRow(i + 1);
-                    var nameCell = row.insertCell(0);
-                    var scoreCell = row.insertCell(1);
-                    nameCell.textContent = scores[i].name;
-                    scoreCell.textContent = scores[i].score;
-                }
-
+                    // var row = table.insertRow(i + 1);
+                    // var nameCell = row.insertCell(0);
+                    // var scoreCell = row.insertCell(1);
+                    // nameCell.textContent = scores[i].name;
+                    // scoreCell.textContent = scores[i].score;
+					table += `<tr><td>${scores[i].name}</td><td>${scores[i].score}</td></tr>`;
+                } 
+               table += '</table>';  
                 // Append the table to the scores div
-                scoresDiv.appendChild(table);
+                scoresDiv.innerHTML=table;
             }
 }
