@@ -31,7 +31,7 @@ function saveScore() {
 function showScores() {
   var scoresContainer = document.getElementById("scores");
   var scores = JSON.parse(localStorage.getItem("scores")) || [];
-scores.sort( function ( a, b ) { return a.score - b.score; } );
+  scores.sort( function ( a, b ) { return a.score - b.score; } );
   if (scores.length > 0) {
     // Create a table and set the first row as headings
     var table = "<table><tr><th>Name</th><th>Score</th></tr>";
